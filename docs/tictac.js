@@ -57,7 +57,16 @@
             }
         }
 
-        
+        function restartGame() {
+            currentPlayer = 'X';
+            gameBoard = ['', '', '', '', '', '', '', '', ''];
+            gameActive = true;
+            status.innerText = "Player X's turn";
+            cells.forEach(cell => {
+                cell.innerText = '';
+                cell.classList.remove('X', 'O');
+            });
+        }
 
 
 
