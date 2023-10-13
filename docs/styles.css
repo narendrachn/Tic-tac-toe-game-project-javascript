@@ -10,3 +10,14 @@ body {
     gap: 5px;
     margin-top: 20px;
 }
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-size: 36px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
