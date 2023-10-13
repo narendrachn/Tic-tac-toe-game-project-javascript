@@ -1,28 +1,15 @@
 "use strict"
 
-(() => {
-    window.addEventListener('load', (event) => {
-      // ************************************************************************
-      // #region Constants and Variables
-  
-      // Canvas references
-      const canvas = document.querySelector('canvas');
-      const ctx = canvas.getContext('2d');
-
-      // UI references
-      const restartButton = document.querySelector('#restart');
-      const undoButton = document.querySelector('#undo');
-      const playerScoreText = document.querySelector('#score-text');
-
       // Constants
-      const CELLS_PER_AXIS = 3;
-      const CELL_WIDTH = canvas.width/CELLS_PER_AXIS;
-      const CELL_HEIGHT = canvas.height/CELLS_PER_AXIS;
-      const MAXIMUM_SCORE = CELLS_PER_AXIS * CELLS_PER_AXIS;
+      
+      const cells = document.querySelectorAll('[data-cell]');
+        const status = document.getElementById('status');
+        const restartButton = document.getElementById('restart');
 
-      // Game objects
-      let grids;
-      let playerScore = MAXIMUM_SCORE;
+        // Game objects
+        let currentPlayer = 'X';
+        let gameBoard = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
 
       function handleCellClick(event) {
         const cell = event.target;
@@ -70,13 +57,3 @@
 
         cells.forEach(cell => cell.addEventListener('click', handleCellClick));
         restartButton.addEventListener('click', restartGame);
-
-
-
-
-
-    }
-    )
-
-
-})();
