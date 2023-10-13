@@ -42,7 +42,23 @@
                 status.innerText = `Player ${currentPlayer}'s turn`;
             }
         }
-    }
+     }
+
+      function isBoardFull() {
+            return gameBoard.every(cell => cell !== '');
+        }
+
+        function endGame(isDraw) {
+            gameActive = false;
+            if (isDraw) {
+                status.innerText = "It's a draw!";
+            } else {
+                status.innerText = `Player ${currentPlayer} wins!`;
+            }
+        }
+
+        
+
 
 
 
